@@ -1,2 +1,2 @@
 # jsTestAssignment
-Testing our function, with  Mocking
+Testing our function, with  Jest
