@@ -3,6 +3,7 @@ import {reverseString} from "../reverseString"
 //import {add, subtract, divide, multiply} from "../calculator"
 import {calculator} from "../calculator"
 import {caesarCipher} from "../caesarCipher"
+import {analyzeArray} from "../analyzeArray"
 
 // test('capitalize function capitalizes the first letter of a string', () => {
 //     expect(capitalize('hello')).toBe('Hello');
@@ -141,5 +142,43 @@ describe('caesarCipher', () => {
   
     test('should handle zero shift input', () => {
       expect(caesarCipher('Hello, world!', 0)).toBe('Hello, world!');
+    });
+  });
+
+
+  describe('analyzeArray', () => {
+    test('returns an object with the correct properties', () => {
+      const result = analyzeArray([1, 2, 3]);
+      expect(result).toHaveProperty('average');
+      expect(result).toHaveProperty('min');
+      expect(result).toHaveProperty('max');
+      expect(result).toHaveProperty('length');
+    });
+  
+    test('returns the correct object for [1, 8, 3, 4, 2, 6]', () => {
+      const input = [1, 8, 3, 4, 2, 6];
+      const expectedOutput = { average: 4, min: 1, max: 8, length: 6 };
+      const actualOutput = analyzeArray(input);
+      expect(actualOutput).toEqual(expectedOutput);
+    });
+  
+    test('calculates the average correctly', () => {
+      const result = analyzeArray([1, 2, 3, 4, 5]);
+      expect(result.average).toBe(3);
+    });
+  
+    test('finds the minimum value correctly', () => {
+      const result = analyzeArray([1, 2, 3, 4, 5]);
+      expect(result.min).toBe(1);
+    });
+  
+    test('finds the maximum value correctly', () => {
+      const result = analyzeArray([1, 2, 3, 4, 5]);
+      expect(result.max).toBe(5);
+    });
+  
+    test('calculates the length correctly', () => {
+      const result = analyzeArray([1, 2, 3, 4, 5]);
+      expect(result.length).toBe(5);
     });
   });
