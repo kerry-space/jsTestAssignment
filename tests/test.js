@@ -26,15 +26,41 @@ describe('capitalize function', () => {
       expect(capitalize(' world  ')).toBe('World');
     });
   });
+
+
+// test('reverse the string function', () => {
+//     expect(reverseString("hello")).toBe("olleh");
+// })
+
+describe('reverseString', () => {
+    test('should reverse a string', () => {
+      expect(reverseString('hello world')).toEqual('dlrow olleh');
+    });
   
+    test('should handle empty string', () => {
+      expect(reverseString('')).toEqual('');
+    });
+  
+    test('should handle single character string', () => {
+      expect(reverseString('a')).toEqual('a');
+    });
+  
+    test('should handle strings with spaces', () => {
+      expect(reverseString('   hello   world   ')).toEqual('dlrow   olleh');
+    });
+  
+    test('should handle strings with special characters', () => {
+      expect(reverseString('hello!@#$%^&*()world')).toEqual(
+        'dlrow)(*&^%$#@!olleh'
+      );
+    });
+  
+    test('handles before and after whitespaces', () => {
+      expect(reverseString('   hello world   ')).toEqual('dlrow olleh');
+    });
+  });
 
-test('reverse the string function', () => {
-    expect(reverseString("hello")).toBe("olleh");
-})
-
-
-//cal test
-
+  
 test('add a + b  function', () => {
   expect(add(2,2)).toEqual(4);
 });
