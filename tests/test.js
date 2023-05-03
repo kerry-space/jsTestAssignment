@@ -109,3 +109,37 @@ describe('calculator', () => {
 // });
 
 
+describe('caesarCipher', () => {
+    test('should encrypt uppercase letters while preserving case', () => {
+      expect(caesarCipher('HELLO', 3)).toBe('KHOOR');
+      expect(caesarCipher('WORLD', 5)).toBe('BTWQI');
+    });
+  
+    test('should encrypt lowercase letters while preserving case', () => {
+      expect(caesarCipher('world', 5)).toBe('btwqi');
+      expect(caesarCipher('hello', 7)).toBe('olssv');
+    });
+  
+    test('should encrypt keeping the same case', () => {
+      expect(caesarCipher('World', 5)).toBe('Btwqi');
+      expect(caesarCipher('Hello', 7)).toBe('Olssv');
+    });
+  
+    test('should handle wrapping around from Z to A and z to a', () => {
+      expect(caesarCipher('ZEBRA', 1)).toBe('AFCSB');
+      expect(caesarCipher('zebra', 1)).toBe('afcsb');
+    });
+  
+    test('should handle non-letter characters including punctuation', () => {
+      expect(caesarCipher('Hello, world!', 7)).toBe('Olssv, dvysk!');
+      expect(caesarCipher('Testing! 1, 2, 3.', 4)).toBe('Xiwxmrk! 1, 2, 3.');
+    });
+  
+    test('should handle empty string input', () => {
+      expect(caesarCipher('', 5)).toBe('');
+    });
+  
+    test('should handle zero shift input', () => {
+      expect(caesarCipher('Hello, world!', 0)).toBe('Hello, world!');
+    });
+  });
