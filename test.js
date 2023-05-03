@@ -1,4 +1,4 @@
-import { capitalize } from "./test/capitalize";
+import { capitalize } from "./test/capitalize"
 import {reverseString} from "./test/reverseString"
 import {add, subtract, divide, multiply} from "./test/calculator"
 import {caesarCipher} from "./test/caesarCipher"
