@@ -3,10 +3,30 @@ import {reverseString} from "../reverseString"
 import {add, subtract, divide, multiply} from "../calculator"
 import {caesarCipher} from "../caesarCipher"
 
-test('capitalize function capitalizes the first letter of a string', () => {
-    expect(capitalize('hello')).toBe('Hello');
-});
+// test('capitalize function capitalizes the first letter of a string', () => {
+//     expect(capitalize('hello')).toBe('Hello');
+// });
 
+describe('capitalize function', () => {
+    test('capitalizes the first character of a string', () => {
+      expect(capitalize('hello')).toBe('Hello');
+      expect(capitalize('world')).toBe('World');
+    });
+  
+    test('handles empty string', () => {
+      expect(capitalize('')).toBe('');
+    });
+  
+    test('handles string with only one character', () => {
+      expect(capitalize('a')).toBe('A');
+    });
+  
+    test('handles before and after whitespaces', () => {
+      expect(capitalize('  hello ')).toBe('Hello');
+      expect(capitalize(' world  ')).toBe('World');
+    });
+  });
+  
 
 test('reverse the string function', () => {
     expect(reverseString("hello")).toBe("olleh");
