@@ -1,7 +1,7 @@
-import { capitalize } from "./test/capitalize"
-import {reverseString} from "./test/reverseString"
-import {add, subtract, divide, multiply} from "./test/calculator"
-import {caesarCipher} from "./test/caesarCipher"
+import { capitalize } from "../capitalize"
+import {reverseString} from "../reverseString"
+import {add, subtract, divide, multiply} from "../calculator"
+import {caesarCipher} from "../caesarCipher"
 
 test('capitalize function capitalizes the first letter of a string', () => {
     expect(capitalize('hello')).toBe('Hello');
